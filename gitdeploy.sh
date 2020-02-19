@@ -4,6 +4,7 @@ APP_NAME=$1
 APPVERSION=$2
 ENV=$3
 
+reqFile="env/requirements.yaml"
 beta="https://${GIT_CI_USER}:${GIT_CI_TOKEN}@gitlab.com/livspaceengg/testdeploydebasis.git" 
 dev="https://${BB_USER_ID}:${BB_USER_TOKEN}@bitbucket.org/livspaceeng/environment-jx-dev.git"
 
@@ -25,8 +26,8 @@ echo "Upgrading version of $APP_NAME in ENV: $envname to $APPVERSION"
 git config --global user.name "${CI_BOT_USER}"
 git config --global user.email "${CI_BOT_EMAIL}"
 rm -rf output.yaml || echo "output.yaml doesnt exist"
-python /tmp/scripts/req-edit.py "env/requirements.yaml" $APP_NAME $APPVERSION
-cp output.yaml test.yaml
-git add test.yaml
+python /tmp/scripts/req-edit.py "$reqFile" $APP_NAME $APPVERSION
+cp output.yaml $reqFile
+git add $reqFile
 git commit -m "Upgrading version of $APP_NAME in ENV($envname) to $APPVERSION"
 git push origin master
