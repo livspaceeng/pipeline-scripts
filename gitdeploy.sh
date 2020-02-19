@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APP_NAME=$1
-APPVERSION=2
+APPVERSION=$2
 ENV=$3
 
 dev="https://${GIT_CI_USER}:${GIT_CI_TOKEN}@gitlab.com/livspaceengg/testdeploydebasis.git" 
