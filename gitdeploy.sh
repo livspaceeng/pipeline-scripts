@@ -19,7 +19,7 @@ fi
 git config --global user.name "${CI_BOT_USER}"
 git config --global user.email "${CI_BOT_EMAIL}"
 rm -rf output.yaml || echo "output.yaml doesnt exist"
-python /tmp/deploy.py test.yaml $APP_NAME $APPVERSION
+python /tmp/scripts/req-edit.py test.yaml $APP_NAME $APPVERSION
 cp output.yaml test.yaml
 git add .
 git commit -m "Upgrading version of $APP_NAME to $APPVERSION"
