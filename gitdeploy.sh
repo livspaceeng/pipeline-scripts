@@ -4,8 +4,8 @@ APP_NAME=$1
 APPVERSION=$2
 ENV=$3
 
-dev="https://${GIT_CI_USER}:${GIT_CI_TOKEN}@gitlab.com/livspaceengg/testdeploydebasis.git" 
-beta="https://${BB_USER_ID}:${BB_USER_TOKEN}@bitbucket.org/livspaceeng/environment-jx-dev.giit"
+beta="https://${GIT_CI_USER}:${GIT_CI_TOKEN}@gitlab.com/livspaceengg/testdeploydebasis.git" 
+dev="https://${BB_USER_ID}:${BB_USER_TOKEN}@bitbucket.org/livspaceeng/environment-jx-dev.giit"
 
 rm -rf /tmp/env || echo "No cleanup required, /tmp/env doesnt exist"
 mkdir /tmp/env && cd /tmp/env
