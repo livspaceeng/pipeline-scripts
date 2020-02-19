@@ -18,7 +18,7 @@ elif [ $ENV == "test" ]; then
 else
   exit 0
 fi
-echo Upgrading version of $APP_NAME in ENV($envname) to $APPVERSION
+echo "Upgrading version of $APP_NAME in ENV: $envname to $APPVERSION"
 git config --global user.name "${CI_BOT_USER}"
 git config --global user.email "${CI_BOT_EMAIL}"
 rm -rf output.yaml || echo "output.yaml doesnt exist"
