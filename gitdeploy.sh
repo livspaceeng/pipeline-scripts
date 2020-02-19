@@ -25,4 +25,4 @@ python /tmp/scripts/req-edit.py test.yaml $APP_NAME $APPVERSION
 cp output.yaml test.yaml
 git add .
 git commit -m "Upgrading version of $APP_NAME in ENV($envname) to $APPVERSION"
-git push
+git push origin master
