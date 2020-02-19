@@ -25,7 +25,7 @@ echo "Upgrading version of $APP_NAME in ENV: $envname to $APPVERSION"
 git config --global user.name "${CI_BOT_USER}"
 git config --global user.email "${CI_BOT_EMAIL}"
 rm -rf output.yaml || echo "output.yaml doesnt exist"
-python /tmp/scripts/req-edit.py test.yaml $APP_NAME $APPVERSION
+python /tmp/scripts/req-edit.py "env/requirements.yaml" $APP_NAME $APPVERSION
 cp output.yaml test.yaml
 git add test.yaml
 git commit -m "Upgrading version of $APP_NAME in ENV($envname) to $APPVERSION"
