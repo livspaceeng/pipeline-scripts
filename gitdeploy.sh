@@ -11,11 +11,14 @@ rm -rf /tmp/env || echo "No cleanup required, /tmp/env doesnt exist"
 mkdir /tmp/env && cd /tmp/env
 if [ $ENV == "master" ]; then
   envname="beta"
+  echo "Cloning repo ${beta}"
   git clone "${beta}"  .
 elif [ $ENV == "test" ]; then
   envname="dev"
+  echo "Cloning repo ${dev}"
   git clone "${dev}"  .
 else
+  echo "No deployment mapped, Exit."
   exit 0
 fi
 echo "Upgrading version of $APP_NAME in ENV: $envname to $APPVERSION"
