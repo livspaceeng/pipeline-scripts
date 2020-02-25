@@ -50,6 +50,7 @@ except Exception as exc:
 try:
   shutil.rmtree("result")
 except Exception as e:
+  print(e)
   print("Error in removing result dir")
 os.mkdir("result")
 
@@ -101,6 +102,7 @@ for subdir, dirs, files in os.walk(FOLDER1+'/values'):
          upYaml[dir_name] = map2[dir_name]
          upList.append(map2[dir_name])
     except Exception as e:
+	    print(e)
 	    print("Skipping", subdir)
 
 delYaml2['dependencies'] = delList
