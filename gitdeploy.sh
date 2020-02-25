@@ -5,7 +5,7 @@ APPVERSION=$2
 ENV=$3
 
 reqFile="env/requirements.yaml"
-beta="https://${GIT_CI_USER}:${GIT_CI_TOKEN}@gitlab.com/livspaceengg/testdeploydebasis.git" 
+beta="https://${BB_USER_ID}:${BB_USER_TOKEN}@bitbucket.org/livspaceeng/environment-jx-beta.git"
 dev="https://${BB_USER_ID}:${BB_USER_TOKEN}@bitbucket.org/livspaceeng/environment-jx-dev.git"
 
 rm -rf /tmp/env || echo "No cleanup required, /tmp/env doesnt exist"
@@ -14,7 +14,7 @@ if [ $ENV == "master" ]; then
   envname="beta"
   echo "Cloning repo ${beta}"
   git clone "${beta}"  .
-elif [ $ENV == "test" ]; then
+elif [ $ENV == "build" ]; then
   envname="dev"
   echo "Cloning repo ${dev}"
   git clone "${dev}"  .
