@@ -65,6 +65,7 @@ def BuildHR(name,namespace,repo,repo_name,version,value):
     return hr
 
 def MergeValues(name):
+    print(f"Merging values for %s" % name)
     d = VALUE_DIR + "/" + name
 
     try:
