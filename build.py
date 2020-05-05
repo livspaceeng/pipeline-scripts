@@ -39,7 +39,7 @@ def str_presenter(dumper, data):
     if (dlen > 1):
         style='|' 
      
-    print("Using style %s for data: %s" % (style,data))
+    #print("Using style %s for data: %s" % (style,data))
     return dumper.represent_scalar('tag:yaml.org,2002:str', data, style=style)
 
 def BuildHR(name,namespace,repo,repo_name,version,value):
